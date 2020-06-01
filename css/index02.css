@@ -1,0 +1,140 @@
+
+.section2 #app{
+    display: flex;
+    padding-top: 20px;
+}
+.section2 .left{
+    width: 150px;
+    height: 600px; 
+    margin-left: 50px;
+    line-height: 600px
+}
+.section2 .left .icon {
+    margin: 35px 0;
+}
+.section2 .left .icon i{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.section2 .icon img{
+    width: 50px;
+    height: 50px;
+}
+.section2 .left ul{
+    width: 100px;
+    height: 100%;
+    background-color: #f0eceb;
+    border-radius: 25px;
+    overflow: hidden;
+}
+.section2 .left ul li{
+    width: 100%;
+    line-height: 35px;
+    text-align: center;
+    cursor: pointer;
+    color:#527879;
+}
+.section2 .left ul li:hover,li.china{
+    color:#fff;
+    text-decoration: underline;
+}
+.section2 .right{
+    width: 100%;
+    height: 650px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+/* 下面 */
+.section2 .bottom{
+    left: 200px;
+    width: 1200px;
+    position: absolute;
+    top: 480px;
+    height: 260px;
+}
+.section2 .bottom p{
+    font-size: 20px;
+
+}
+.section2 .bottom ul{
+    width: 100%;
+    height: 200px;
+    display: flex;
+    justify-content: space-between;
+   
+}
+.section2 .bottom ul li{
+    list-style-type:none;
+    width: 50px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+.section2 .bottom .data{
+    line-height: 35px;
+    color:orange;
+    text-align: center;
+    display: none;
+}
+.section2 .bottom .line{
+    width: 50px;
+    background-color:#eee ;
+    border-radius: 10px;
+}.section2 .bottom .month{
+    line-height: 35px;
+    color:#000;
+    text-align: center;
+}
+.section2 .bottom li:hover .data{
+    display: inline-block;
+}
+.section2 .bottom li:hover .line{
+    background-color: #F69802;
+}
+.section2 .top{
+    width: 100%;
+    height:400px;
+    display: flex;
+    justify-content: space-between;
+}
+.section2 #main{
+    width:500px;
+    height:350px;
+    border:1px solid #ddd;
+    border-radius: 35px;
+    position: absolute;
+    left: 250px;
+    height: 360px;
+    top: 80px;
+    box-shadow: rgb(91,146,148) 0px 18px 49px 0px
+}
+.section2 #main2{
+    width:500px;
+    height:350px;
+    border:1px solid #ddd;
+    border-radius: 35px;
+    position: absolute;
+    left: 250px;
+    height: 360px;
+    top: 80px;
+    box-shadow: rgb(91,146,148) 0px 18px 49px 0px;
+    display: none;
+    background-color: #fff;
+}
+.section2 #main2 img{
+    border-radius: 30px;
+}
+.section2 #myChart{
+    width: 500px;
+    border:1px solid #ddd;
+    border-radius: 35px;
+    position: absolute;
+    height: 360px;
+    right: 130px;
+    top: 80px;
+    box-shadow: rgb(91,146,148) 0px 18px 49px 0px
+}

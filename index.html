@@ -1,0 +1,1085 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<title>逆行者</title>
+	<link rel="stylesheet" href="css/base.css">
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" type="text/css" href="css/swiper.min.css" />
+	<link rel="stylesheet" href="https://cdn.bootcss.com/twitter-bootstrap/4.3.0/css/bootstrap.min.css" /><!--  -->
+	<link rel="stylesheet" href="css/animate.css">
+	<link rel="stylesheet" href="css/slick.css">
+	<link rel="stylesheet" href="css/jquery.fullPage.css" />
+	<link rel="stylesheet" href="css/index.css">
+	<link rel="stylesheet" href="css/thirdpage.css">
+	<link rel="stylesheet" type="text/css" href="./css/iconfont.css" />
+	<link rel="stylesheet" href="css/roll.css">
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/header.css">
+	<link rel="stylesheet" href="css/index02.css">
+
+	<script src="https://cdn.bootcss.com/echarts/3.7.0/echarts.min.js"></script>
+	<script src="./incubator-echarts/map/js/china.js"></script>
+<!--	<script src="./incubator-echarts/map/js/world.js"></script>-->
+
+<!-- 	<script src="https://www.jq22.com/jquery/echarts-4.2.1.min.js"></script> -->
+	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+	<script src="./js/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/84/three.min.js"></script>
+
+</head>
+
+<body>
+
+	<header>
+		<div id="nav">
+			<ul>
+				<li><a href="#one">首页</a></li>
+				<li><a href="#two">疫情数据</a></li>
+				<li><a href="#three">疫情历程</a></li>
+				<li><a href="#four">众志成城</a></li>
+				<li><a href="#five">全民站疫</a></li>
+			</ul>
+		</div>
+	</header>
+
+	<!--移动端的导航-->
+
+	<!-- 内容 -->
+	<div id="index_main" class="index_main">
+		<!--导航-->
+		<div class="section section1">
+			<div class="index_banner">
+				<div class="item">
+					<div class="items scaleBg" style="background-image: url(img/5.jpg);"></div>
+					<div class="inner">
+						<div class="block_txt">
+							<h4> Goodliness,to be continued</h4>
+							<h2><span>2019</span></h2>
+							<h3>病毒入侵了我们的家园，让我们平静的生活陷入了黑暗</h3>
+						</div>
+					</div>
+				</div>
+				<div class="item">
+					<div class="items scaleBg" style="background-image: url(img/3.jpg);"></div>
+					<div class="inner">
+						<div class="block_txt">
+							<h4> Goodliness,to be continued</h4>
+							<h2>致敬<span>逆行者</span></h2>
+							<h3>战役英雄就在我们的身边</h3>
+						</div>
+					</div>
+				</div>
+				<div class="item">
+					<div class="items scaleBg" style="background-image: url(img/4.jpg);"></div>
+					<div class="inner">
+						<div class="block_txt">
+							<h4> </h4>
+							<h2><span>爱国力行</span><br></h2>
+							<h3>愿逝者安息生者奋发 愿国泰民安山河无恙！</h3>
+						</div>
+					</div>
+				</div>
+				<div class="item">
+					<div class="items scaleBg" style="background-image: url(img/9.jpg);"></div>
+					<div class="inner">
+						<div class="block_txt">
+							<h4>缅怀烈士 </h4>
+							<h2>致敬英雄</h2>
+							<h3>夺取这场战斗的全面胜利是告慰你们的最好方式</h3>
+						</div>
+					</div>
+				</div>
+				<div class="item">
+					<div class="items scaleBg" style="background-image: url(img/last.jpg);"></div>
+					<div class="inner">
+						<div class="block_txt">
+							<h4> 追梦新时代</h4>
+							<h2></h2>
+							<h3>晨光起于白塔尖顶，终将铺满阴霾之地</h3>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="left slick_txt">
+				<div class="prev slick_arrow"></div>
+			</div>
+			<div class="right slick_txt">
+				<div class="next slick_arrow"></div>
+			</div>
+			<div class="number">
+				<div class="inner clearfix">
+					<span class="active"></span>
+					<span></span>
+					<span></span>
+					<span></span>
+					<span></span>
+				</div>
+			</div>
+		</div>
+		<div class="section section2">
+
+			<div id="app">
+
+				<div class="left">
+					<ul>
+						<li class="icon"><i><img
+									src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=181950277,2065922876&fm=26&gp=0.jpg"
+									alt="" srcset=""></i></li>
+						<li id="china">中国</li>
+						<li id="usa">美国</li>
+						<li id="cad">加拿大</li>
+						<li id="sin">新加波</li>
+						<li id="rus">俄罗斯</li>
+					</ul>
+				</div>
+				<div class="right">
+					<div class="top">
+<!--地图展示-->
+						<div id="main" ref='myEchart'></div>
+						<div id="main2" ></div>
+<!--折线图-->
+						<div id="myChart" ref='myChart'></div>
+					</div>
+
+<!--					柱形图 -->
+					<div id class="bottom">
+						<p>本月数据</p>
+
+						<ul>
+							<li v-for='item in bottomData' :key='item.id'>
+								<p class="data">{{item.data}}</p>
+								<div class="line" :style="item.obj"></div>
+								<p class="month">{{item.id+1}}</p>
+							</li>
+
+						</ul>
+					</div>
+				</div>
+			</div>
+
+
+			<script type="text/javascript" src="./js/data.js"></script>
+			<script type="text/javascript" src="./js/map.js"></script>
+
+
+		</div>
+		<div class="section section3">
+			<div class=" page-layout page-main-content">
+				<div class="layout layout-grid-0">
+					<div class="grid-0">
+						<div class="col col-main">
+							<div class="main-wrap J_Region">
+
+								<!--canvas-->
+						<!-- 	 <div class="wb-zc-lxmod-yunqi-review-2018-anim J_Module">
+									<div class="module-wrap J_tb_lazyload dbl_tms_module_wrap" style="background-color: darksalmon;">  -->
+								<!-- 避免用window的全局变量获取数据 -->
+						<!-- 				<textarea class="schemaData" style="display:none;">
+										{"moduleinfo":{"bgColor":"#010017","year":"2018"},"$tmsId":"tce/1578228"}
+										</textarea>
+										<div id="aniBg-wrap"></div>
+										<canvas id="aniBg"></canvas>
+									</div>
+								</div>  -->
+								<!--canvas 结束 -->
+
+								<!--主体开始 -->
+								<div class="wb-zc-lxmod-yunqi-review-2018 J_Module">
+									<div class="module-wrap J_tb_lazyload dbl_tms_module_wrap">
+										<!-- 避免用window的全局变量获取数据 不要删 -->
+										<textarea class="schemaData" style="display:none;">{}</textarea>
+										<div class="logo">
+											<div class="con">
+												<a href="javascript:;" target="_blank">
+													<!-- <img src="./images/logo.png"> -->
+												</a>
+											</div>
+										</div>
+										<div class="dn-container">
+											<h6><b>Review</b>历史回顾</h6>
+											<div class="years">
+
+												<div class="item cur">
+													<span class="vertical"></span>
+													<a href="index.html" target="_self">
+														<span>
+															<b>2019</b>
+															<i>全球战“疫”</i>
+														</span>
+													</a>
+												</div>
+
+												<div class="item">
+													<span class="vertical"></span>
+													<a href="#" target="_self">
+
+														<b>2020</b>
+														<i></i>
+
+													</a>
+												</div>
+
+												<div class="item">
+													<span class="vertical"></span>
+													<a href="javascript:;" target="_self">
+
+														<!-- 	<b>2020</b>  -->
+														<i></i>
+
+													</a>
+												</div>
+
+												<div class="item">
+													<span class="vertical"></span>
+													<a href="javascript:;" target="_self">
+
+														<!-- 	<b>2015</b> -->
+														<i></i>
+
+													</a>
+												</div>
+
+											</div>
+											<div class="kv-wrap">
+												<div class="con">
+													<img src="./img/0bingli.jpg" class="kv">
+													<p class="title">勠力同心，战“疫”必胜！</p>
+													<p class="text">
+														如果战端一开，那就是地无分南北，年无分老幼，无论何人，皆有守土抗战之责，皆应抱定牺牲一切之决心。——（面对抗击疫情的这场特殊战役，我们仍然需要“地无分南北，年无分老幼”。）
+
+													</p>
+												</div>
+											</div>
+											<div class="review-wrap">
+												<div class="city-list">
+
+													<div class="item"><em></em><span>1月</span><i></i></div>
+
+													<div class="item"><em></em><span>2月</span><i></i></div>
+
+													<div class="item"><em></em><span>3月</span><i></i></div>
+
+													<div class="item"><em></em><span>4月</span><i></i></div>
+
+													<div class="item"><em></em><span>5月</span><i></i></div>
+
+													<div class="item"><em></em><span>6月</span><i></i></div>
+
+													<div class="item"><em></em><span>7月</span><i></i></div>
+
+												</div>
+												<div class="slick-wrap swiper-container">
+													<div class="swiper-wrapper">
+
+														<div class="item swiper-slide">
+															<div class="con">
+																<a href="javascript:;" target="_blank">
+																	<div class="color">
+																		<div class="mask"></div>
+																	</div>
+																	<div class="img">
+																		<img src="./img/病毒防护.jpg">
+																		<div class="title">
+																			<div class="etit">SHENZHEN</div>
+																			<div class="ctit">病毒入侵</div>
+																		</div>
+																		<div class="mask"></div>
+																	</div>
+																	<div class="info">
+																		<div class="date">3.28-29</div>
+																		<div class="txt">Conference<br>Review<br>疫情回顾
+																		</div>
+																		<div class="mask"></div>
+																		<i class="iconfont icon-arrow-right"></i>
+																	</div>
+																</a>
+
+																<div class="play"
+																	data-url="//yunqivedio.oss-cn-hangzhou.aliyuncs.com/2018sz/2018-03-28上午主会场.mp4">
+																	<i class="iconfont icon-arrow-bottom"></i>Watch
+																	Video<span>观看视频</span></div>
+
+															</div>
+															<div class="unclick"></div>
+														</div>
+
+														<div class="item swiper-slide">
+															<div class="con">
+																<a href="javascript:;" target="_blank">
+																	<div class="color">
+																		<div class="mask"></div>
+																	</div>
+																	<div class="img">
+																		<img src="./img/口罩加工.jpg">
+																		<div class="title">
+																			<div class="etit">NANJING</div>
+																			<div class="ctit">口罩加工</div>
+																		</div>
+																		<div class="mask"></div>
+																	</div>
+																	<div class="info">
+																		<div class="date">4.26</div>
+																		<div class="txt">Conference<br>Review<br>疫情回顾
+																		</div>
+																		<div class="mask"></div>
+																		<i class="iconfont icon-arrow-right"></i>
+																	</div>
+																</a>
+
+																<div class="play"
+																	data-url="//yunqivedio.oss-cn-hangzhou.aliyuncs.com/2018nj/驱动数字中国.mp4">
+																	<i class="iconfont icon-arrow-bottom"></i>Watch
+																	Video<span>观看视频</span></div>
+
+															</div>
+															<div class="unclick"></div>
+														</div>
+
+														<div class="item swiper-slide">
+															<div class="con">
+																<a href="javascript:;" target="_blank">
+																	<div class="color">
+																		<div class="mask"></div>
+																	</div>
+																	<div class="img">
+																		<img src="./img/深圳地铁.jpg">
+																		<div class="title">
+																			<div class="etit">WUHAN</div>
+																			<div class="ctit">深圳地铁</div>
+																		</div>
+																		<div class="mask"></div>
+																	</div>
+																	<div class="info">
+																		<div class="date">5.23</div>
+																		<div class="txt">Conference<br>Review<br>疫情回顾
+																		</div>
+																		<div class="mask"></div>
+																		<i class="iconfont icon-arrow-right"></i>
+																	</div>
+																</a>
+
+																<div class="play"
+																	data-url="//yunqivedio.oss-cn-hangzhou.aliyuncs.com/2018wh/main.mp4">
+																	<i class="iconfont icon-arrow-bottom"></i>Watch
+																	Video<span>观看视频</span></div>
+
+															</div>
+															<div class="unclick"></div>
+														</div>
+
+														<div class="item swiper-slide">
+															<div class="con">
+																<a href="javascript:;" target="_blank">
+																	<div class="color">
+																		<div class="mask"></div>
+																	</div>
+																	<div class="img">
+																		<img src="./img/0bingli.jpg">
+																		<div class="title">
+																			<div class="etit">SHANGHAI</div>
+																			<div class="ctit">0病例</div>
+																		</div>
+																		<div class="mask"></div>
+																	</div>
+																	<div class="info">
+																		<div class="date">6.7-8</div>
+																		<div class="txt">Conference<br>Review<br>疫情回顾
+																		</div>
+																		<div class="mask"></div>
+																		<i class="iconfont icon-arrow-right"></i>
+																	</div>
+																</a>
+
+																<div class="play"
+																	data-url="//yunqivedio.oss-cn-hangzhou.aliyuncs.com/2018sh/main.mp4">
+																	<i class="iconfont icon-arrow-bottom"></i>Watch
+																	Video<span>观看视频</span></div>
+
+															</div>
+															<div class="unclick"></div>
+														</div>
+
+														<div class="item swiper-slide">
+															<div class="con">
+																<a href="javascript:;" target="_blank">
+																	<div class="color">
+																		<div class="mask"></div>
+																	</div>
+																	<div class="img">
+																		<img src="./img/全球疫情.jpg">
+																		<div class="title">
+																			<div class="etit">CHONGQING</div>
+																			<div class="ctit">全球病毒</div>
+																		</div>
+																		<div class="mask"></div>
+																	</div>
+																	<div class="info">
+																		<div class="date">8.24</div>
+																		<div class="txt">Conference<br>Review<br>全球抗战
+																		</div>
+																		<div class="mask"></div>
+																		<i class="iconfont icon-arrow-right"></i>
+																	</div>
+																</a>
+
+																<div class="play"
+																	data-url="//yunqivedio.oss-cn-hangzhou.aliyuncs.com/od/dpkXP1535511721324.mp4">
+																	<i class="iconfont icon-arrow-bottom"></i>Watch
+																	Video<span>观看视频</span></div>
+
+															</div>
+															<div class="unclick"></div>
+														</div>
+
+														<div class="item swiper-slide">
+															<div class="con">
+																<a href="javascript:;" target="_blank">
+																	<div class="color">
+																		<div class="mask"></div>
+																	</div>
+																	<div class="img">
+																		<img src="./img/研究药物.jpg">
+																		<div class="title">
+																			<div class="etit"></div>
+																			<div class="ctit"></div>
+																		</div>
+																		<div class="mask"></div>
+																	</div>
+																	<div class="info">
+																		<div class="date">2.19</div>
+																		<div class="txt">RESEARCH<br>Review<br>研究药物
+																		</div>
+																		<div class="mask"></div>
+																		<i class="iconfont icon-arrow-right"></i>
+																	</div>
+																</a>
+
+																<div class="play"
+																	data-url="https://yunqivedio.alicdn.com/od/8EsX81537627702464.mp4">
+																	<i class="iconfont icon-arrow-bottom"></i>Watch
+																	Video<span>观看视频</span></div>
+
+															</div>
+															<div class="unclick"></div>
+														</div>
+
+														<div class="item swiper-slide">
+															<div class="con">
+																<a href="javascript:;" target="_blank">
+																	<div class="color">
+																		<div class="mask"></div>
+																	</div>
+																	<div class="img">
+																		<img src="./img/疫情复工.jpg">
+																		<div class="title">
+																			<div class="etit">疫情复工</div>
+																			<div class="ctit">未来可期</div>
+																		</div>
+																		<div class="mask"></div>
+																	</div>
+																	<div class="info">
+																		<div class="date">4.1</div>
+																		<div class="txt">return to
+																			work<br>Review<br>疫情复工</div>
+																		<div class="mask"></div>
+																		<i class="iconfont icon-arrow-right"></i>
+																	</div>
+																</a>
+
+																<div class="play"
+																	data-url="https://yunqivedio.alicdn.com/od/ePJNB1543559844156.mp4">
+																	<i class="iconfont icon-arrow-bottom"></i>Watch
+																	Video<span>观看视频</span></div>
+
+															</div>
+															<div class="unclick"></div>
+														</div>
+
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="right-sign"></div>
+										<!--响应式开始，以下重复代码代码是兼容手机端！！-->
+										<div class="nav">
+											<div class="fix fixed" style="background: #010017;">
+												<div class="con">
+
+													<div class="scroll">
+
+														<div class="item cur">
+															<a href="javascript:;" target="_self">2018</a>
+														</div>
+
+														<div class="item">
+															<a href="javascript:;" target="_self">2017</a>
+														</div>
+
+														<div class="item">
+															<a href="javascript:;" target="_self">2016</a>
+														</div>
+
+														<div class="item" style="margin-right: 0;">
+															<a href="javascript:;" target="_self">2015</a>
+														</div>
+
+													</div>
+
+												</div>
+											</div>
+										</div>
+										<div class="inner">
+											<img src="./images/shuziqudong.png" class="kv">
+											<p class="title">勠力同心，战“疫”必胜！</p>
+											<p class="text">
+												如果战端一开，那就是地无分南北，年无分老幼，无论何人，皆有守土抗战之责，皆应抱定牺牲一切之决心。——（面对抗击疫情的这场特殊战役，我们仍然需要“地无分南北，年无分老幼”。）
+											</p>
+											<div class="list">
+
+												<div class="item swiper-slide">
+													<div class="con">
+														<a href="javascript:;" target="_blank">
+															<div class="color">
+																<div class="mask"></div>
+															</div>
+															<div class="img">
+																<img src="./images/shenzhen.png">
+																<div class="tit">
+																	<div class="etit">SHENZHEN</div>
+																	<div class="ctit">深圳峰会</div>
+																</div>
+																<div class="mask"></div>
+															</div>
+															<div class="info">
+																<div class="date">3.28-29</div>
+																<div class="txt">Conference<br>Review<br>精彩回顾</div>
+																<div class="mask"></div>
+																<i class="iconfont icon-arrow-right"></i>
+															</div>
+														</a>
+
+														<div class="play"
+															data-url="//yunqivedio.oss-cn-hangzhou.aliyuncs.com/2018sz/2018-03-28上午主会场.mp4">
+															<i class="iconfont icon-arrow-bottom"></i>Watch
+															Video<span>观看视频</span></div>
+
+													</div>
+												</div>
+
+												<div class="item swiper-slide">
+													<div class="con">
+														<a href="javascript:;" target="_blank">
+															<div class="color">
+																<div class="mask"></div>
+															</div>
+															<div class="img">
+																<img src="./images/nanjing.png">
+																<div class="tit">
+																	<div class="etit">NANJING</div>
+																	<div class="ctit">南京峰会</div>
+																</div>
+																<div class="mask"></div>
+															</div>
+															<div class="info">
+																<div class="date">4.26</div>
+																<div class="txt">Conference<br>Review<br>精彩回顾</div>
+																<div class="mask"></div>
+																<i class="iconfont icon-arrow-right"></i>
+															</div>
+														</a>
+
+														<div class="play"
+															data-url="//yunqivedio.oss-cn-hangzhou.aliyuncs.com/2018nj/驱动数字中国.mp4">
+															<i class="iconfont icon-arrow-bottom"></i>Watch
+															Video<span>观看视频</span></div>
+
+													</div>
+												</div>
+
+												<div class="item swiper-slide">
+													<div class="con">
+														<a href="javascript:;" target="_blank">
+															<div class="color">
+																<div class="mask"></div>
+															</div>
+															<div class="img">
+																<img src="./images/wuhan.png">
+																<div class="tit">
+																	<div class="etit">WUHAN</div>
+																	<div class="ctit">武汉峰会</div>
+																</div>
+																<div class="mask"></div>
+															</div>
+															<div class="info">
+																<div class="date">5.23</div>
+																<div class="txt">Conference<br>Review<br>精彩回顾</div>
+																<div class="mask"></div>
+																<i class="iconfont icon-arrow-right"></i>
+															</div>
+														</a>
+
+														<div class="play"
+															data-url="//yunqivedio.oss-cn-hangzhou.aliyuncs.com/2018wh/main.mp4">
+															<i class="iconfont icon-arrow-bottom"></i>Watch
+															Video<span>观看视频</span></div>
+
+													</div>
+												</div>
+
+												<div class="item swiper-slide">
+													<div class="con">
+														<a href="javascript:;" target="_blank">
+															<div class="color">
+																<div class="mask"></div>
+															</div>
+															<div class="img">
+																<img src="./images/shanghai.jpg">
+																<div class="tit">
+																	<div class="etit">SHANGHAI</div>
+																	<div class="ctit">上海峰会</div>
+																</div>
+																<div class="mask"></div>
+															</div>
+															<div class="info">
+																<div class="date">6.7-8</div>
+																<div class="txt">Conference<br>Review<br>精彩回顾</div>
+																<div class="mask"></div>
+																<i class="iconfont icon-arrow-right"></i>
+															</div>
+														</a>
+
+														<div class="play"
+															data-url="//yunqivedio.oss-cn-hangzhou.aliyuncs.com/2018sh/main.mp4">
+															<i class="iconfont icon-arrow-bottom"></i>Watch
+															Video<span>观看视频</span></div>
+
+													</div>
+												</div>
+
+												<div class="item swiper-slide">
+													<div class="con">
+														<a href="javascript:;" target="_blank">
+															<div class="color">
+																<div class="mask"></div>
+															</div>
+															<div class="img">
+																<img src="./images/chongqing.jpg">
+																<div class="tit">
+																	<div class="etit">CHONGQING</div>
+																	<div class="ctit">重庆峰会</div>
+																</div>
+																<div class="mask"></div>
+															</div>
+															<div class="info">
+																<div class="date">8.24</div>
+																<div class="txt">Conference<br>Review<br>精彩回顾</div>
+																<div class="mask"></div>
+																<i class="iconfont icon-arrow-right"></i>
+															</div>
+														</a>
+
+														<div class="play"
+															data-url="//yunqivedio.oss-cn-hangzhou.aliyuncs.com/od/dpkXP1535511721324.mp4">
+															<i class="iconfont icon-arrow-bottom"></i>Watch
+															Video<span>观看视频</span></div>
+
+													</div>
+												</div>
+
+												<div class="item swiper-slide">
+													<div class="con">
+														<a href="javascript:;" target="_blank">
+															<div class="color">
+																<div class="mask"></div>
+															</div>
+															<div class="img">
+																<img src="./images/hangzhou.png">
+																<div class="tit">
+																	<div class="etit">HANGZHOU</div>
+																	<div class="ctit">杭州云栖</div>
+																</div>
+																<div class="mask"></div>
+															</div>
+															<div class="info">
+																<div class="date">9.19-22</div>
+																<div class="txt">Conference<br>Review<br>精彩回顾</div>
+																<div class="mask"></div>
+																<i class="iconfont icon-arrow-right"></i>
+															</div>
+														</a>
+
+														<div class="play"
+															data-url="https://yunqivedio.alicdn.com/od/8EsX81537627702464.mp4">
+															<i class="iconfont icon-arrow-bottom"></i>Watch
+															Video<span>观看视频</span></div>
+
+													</div>
+												</div>
+
+												<div class="item swiper-slide">
+													<div class="con">
+														<a href="javascript:;" target="_blank">
+															<div class="color">
+																<div class="mask"></div>
+															</div>
+															<div class="img">
+																<img src="./images/guangdong.jpg">
+																<div class="tit">
+																	<div class="etit">GUANGDONG</div>
+																	<div class="ctit">广东云栖</div>
+																</div>
+																<div class="mask"></div>
+															</div>
+															<div class="info">
+																<div class="date">11.22</div>
+																<div class="txt">Conference<br>Review<br>精彩回顾</div>
+																<div class="mask"></div>
+																<i class="iconfont icon-arrow-right"></i>
+															</div>
+														</a>
+
+														<div class="play"
+															data-url="https://yunqivedio.alicdn.com/od/ePJNB1543559844156.mp4">
+															<i class="iconfont icon-arrow-bottom"></i>Watch
+															Video<span>观看视频</span></div>
+
+													</div>
+												</div>
+
+											</div>
+										</div>
+										<!--响应式结束-->
+										<div class="video-mask">
+											<div class="video-wrap">
+												<i class="iconfont icon-wrong-thin close"></i>
+											</div>
+										</div>
+									</div>
+								</div>
+								<!--主体结束-->
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="section section4">
+			
+			<div class="test" style="width: 100%; height: 100%; margin-top: 50px;">
+				<svg class="hidden">
+					<symbol id="icon-arrow" viewBox="0 0 24 24">
+						<title>arrow</title>
+						<polygon points="6.3,12.8 20.9,12.8 20.9,11.2 6.3,11.2 10.2,7.2 9,6 3.1,12 9,18 10.2,16.8 " />
+					</symbol>
+					<symbol id="icon-drop" viewBox="0 0 24 24">
+						<title>drop</title>
+						<path
+							d="M12,21c-3.6,0-6.6-3-6.6-6.6C5.4,11,10.8,4,11.4,3.2C11.6,3.1,11.8,3,12,3s0.4,0.1,0.6,0.3c0.6,0.8,6.1,7.8,6.1,11.2C18.6,18.1,15.6,21,12,21zM12,4.8c-1.8,2.4-5.2,7.4-5.2,9.6c0,2.9,2.3,5.2,5.2,5.2s5.2-2.3,5.2-5.2C17.2,12.2,13.8,7.3,12,4.8z" />
+						<path
+							d="M12,18.2c-0.4,0-0.7-0.3-0.7-0.7s0.3-0.7,0.7-0.7c1.3,0,2.4-1.1,2.4-2.4c0-0.4,0.3-0.7,0.7-0.7c0.4,0,0.7,0.3,0.7,0.7C15.8,16.5,14.1,18.2,12,18.2z" />
+					</symbol>
+					<svg id="icon-github" viewBox="0 0 33 33">
+						<title>github</title>
+						<path
+							d="M16.608.455C7.614.455.32 7.748.32 16.745c0 7.197 4.667 13.302 11.14 15.456.815.15 1.112-.353 1.112-.785 0-.386-.014-1.411-.022-2.77-4.531.984-5.487-2.184-5.487-2.184-.741-1.882-1.809-2.383-1.809-2.383-1.479-1.01.112-.99.112-.99 1.635.115 2.495 1.679 2.495 1.679 1.453 2.489 3.813 1.77 4.741 1.353.148-1.052.569-1.77 1.034-2.177-3.617-.411-7.42-1.809-7.42-8.051 0-1.778.635-3.233 1.677-4.371-.168-.412-.727-2.069.16-4.311 0 0 1.367-.438 4.479 1.67a15.602 15.602 0 0 1 4.078-.549 15.62 15.62 0 0 1 4.078.549c3.11-2.108 4.475-1.67 4.475-1.67.889 2.242.33 3.899.163 4.311C26.37 12.66 27 14.115 27 15.893c0 6.258-3.809 7.635-7.437 8.038.584.503 1.105 1.497 1.105 3.017 0 2.177-.02 3.934-.02 4.468 0 .436.294.943 1.12.784 6.468-2.159 11.131-8.26 11.131-15.455 0-8.997-7.294-16.29-16.291-16.29">
+						</path>
+					</svg>
+					<symbol id="icon-cross" viewBox="0 0 24 23">
+						<title>cross</title>
+						<path
+							d="M23.865 3.677c.197-.383.164-.818-.008-1.18.048-.41-.06-.827-.448-1.147L22.323.457c-.636-.524-1.632-.689-2.25 0a155.348 155.348 0 0 1-8.797 9.001C9.011 7.342 6.72 5.255 4.443 3.165c-.8-.734-1.956-.503-2.458.37C1.253 3.9.659 4.374.168 5.182c-.233.386-.215.872 0 1.258 1.47 2.635 4.31 4.951 6.646 7.083-.313.28-.623.562-.942.836-3.146 2.702-5.268 4.416-1.331 7.187.053.037.107.029.161.05.076.036.148.06.232.074.026 0 .05.005.075.003.082.007.16.027.243.011 2.117-.415 4.085-2.074 5.872-3.9 1.74 1.715 3.592 3.353 5.63 4.325.485.232 1.063.097 1.436-.227.626.047 1.197-.342 1.484-.901.042-.026.07-.041.116-.07.91-.569.993-1.701.32-2.482-1.522-1.762-3.138-3.438-4.787-5.084 2.968-2.9 6.674-6.027 8.542-9.667z" />
+					</symbol>
+				</svg>
+				<main>
+
+					<div class="content" id="con">
+						<div class="grid">
+
+							<a class="grid__item" href="#preview-1">
+								<div class="box">
+									<div class="box__shadow"></div>
+									<img class="box__img" src="img/武汉.jpg" alt="Some image" />
+									<h3 class="box__title"><span class="box__title-inner" data-hover="加油">加油</span>
+									</h3>
+									<h4 class="box__text"><span class="box__text-inner" style="color: #fff;">点亮武汉</span>
+									</h4>
+									<div class="box__deco">&#10014;</div>
+									<p class="box__content">"按下暂停键的武汉重启了，武汉回来了"</p>
+								</div>
+							</a>
+							<a class="grid__item box_02" href="#preview-2">
+								<div class="box">
+									<div class="box__shadow"></div>
+									<img class="box__img" src="img/wuhan.jpg" alt="Some image" />
+									<!-- 	<h3 class="box__title"><span class="box__title-inner" data-hover="Memo">Memo</span></h3> -->
+									<h4 class="box__text"><span class="box__text-inner" style="color: #fff;">点亮武汉</span>
+									</h4>
+									<div class="box__deco">&#10014;</div>
+									<p class="box__content">"久别重逢，祝一切安好。你好武汉！"</p>
+								</div>
+							</a>
+
+						</div>
+
+					</div>
+					<div class="overlay">
+						<div class="overlay__reveal"></div>
+						<div class="overlay__item" id="preview-1">
+							<div class="box">
+								<div class="box__shadow"></div>
+								<img class="box__img box__img--original" src="img/武汉加油.jpg" alt="Some image" />
+								<h3 class="box__title"><span class="box__title-inner"
+										style="color: cadetblue;">加油</span></h3>
+								<h4 class="box__text"><span class="box__text-inner" style="color: #010017;">心点亮一盏灯，爱聚成一座城</span>
+								</h4>
+								<div class="box__deco">&#10014;</div>
+							</div>
+							<p class="overlay__content">
+								不吵，不堵车
+								晚上7点，像凌晨3点
+								武汉，像被按下了暂停键
+								热闹被病毒藏起里了
+								每个人和每个人 都隔开了很远
+								还有多久才能脱下口罩
+								面对面问一声 吃了吗？
+								疫情从武汉到全国
+								支援从全国到武汉
+								你看，爱和希望比病毒蔓延更快
+								每一种爱 都刻进武汉的心脏
+							</p>
+						</div>
+						<div class="overlay__item" id="preview-2">
+							<div class="box">
+								<div class="box__shadow"></div>
+								<img class="box__img box__img--original" src="img/武汉加油.jpg" alt="Some image" />
+								<h3 class="box__title"><span class="box__title-inner"
+										style="color: cadetblue;">加油</span></h3>
+								<h4 class="box__text" style="border: 0px;"><span class="box__text-inner"
+										style="color: #010017;"> 谢谢你为武汉拼过命</span></h4>
+								<div class="box__deco">&#10014;</div>
+							</div>
+							<p class="overlay__content">
+								今天，武汉按下重启键。虽然完全恢复往常还需一段时日，但我们离摘下口罩、互相拥抱的时刻更近了。再坚持一下，往日的繁华与热闹，就要回来了。转发说声，我们终会在人间烟火中重逢！
+							</p><a href="#the-third-div" id="testa" style="background: url('./img/下一页.svg'); display: block;
+							width: 40px;
+							height: 40px;
+							position: absolute;
+							right: 100px;
+							bottom: 30px;
+							text-decoration: none;
+							">next</a>
+						</div>
+						<div id="the-third-div" style="    height: 100%;
+						width: 100%;
+						position: absolute;
+						display: none;
+						z-index: 1;
+						">
+							<div id="m0" style=" width: 100%;background-color: coral;z-index: 2;position: relative;">
+								<video autoplay loop controls="false" id="myVideo" muted="true" style="z-index: 1;">
+									<source src="./video/摄图网_video_79913.mp4" type="video/mp4">
+
+								</video>
+								<a href="#con" class="cd-cl" style="    display: block;
+							width: 40px;
+							height: 40px;
+							background: url(./img/cd-icon-close-mobile.svg);
+							z-index: 999;
+							position: absolute;
+							top: 50px;
+							right: 5%;" id="close_a"></a>
+
+							</div>
+
+
+
+
+						</div>
+
+						<button class="overlay__close"><svg class="icon icon--cross">
+								<use xlink:href="#icon-cross"></use>
+							</svg></button>
+					</div>
+				</main>
+
+			</div>
+
+		</div>
+		 	
+		<div class="section section6">
+			<div class="projects-container">
+				<ul>
+					<li>
+						<div class="cd-title">
+							<h2>
+								体温测量
+							</h2>
+							<p>
+								疫情期间防止机场预防境外输入病例测量体温
+							</p>
+						</div>
+						<div class="cd-project-info">
+							<p>
+								疫情期间防止机场预防境外输入病例测量体温 。
+							</p>
+						</div>
+					</li>
+					<li>
+						<div class="cd-title">
+							<h2>
+								无接触配送
+							</h2>
+							<p>
+								因“疫”而兴，无接触配送
+							</p>
+						</div>
+						<div class="cd-project-info">
+							<p>
+								疫情的猝不及防，让很多想在春节大展拳脚的商家，打乱了原有的计划，也让“无接触卖货”成为了消费主流。
+
+								而除了“无接触外卖”外，大家的生活采购需求，买菜买药通通也都可以通过“无接触配送”的方式进行.“无接触配送”并不是昙花一现的伪需求，或许还是顺势而生的真机遇。
+							</p>
+						</div>
+					</li>
+					<li>
+						<div class="cd-title">
+							<h2>
+								新冠科普
+							</h2>
+							<p>
+								医生线上网络远程讲解肺部感染知识
+							</p>
+						</div>
+						<div class="cd-project-info">
+							<p>
+								老年肺炎常缺乏明显呼吸系症状，症状多不典型，病情进展快，易发生漏诊、错诊。首发症状为呼吸急促及呼吸困难，或有意识障碍、嗜睡、脱水、食欲减退等。
+
+							</p>
+						</div>
+					</li>
+					<li>
+						<div class="cd-title">
+							<h2>
+								学生网课
+							</h2>
+							<p>
+								大家在家网上学习
+							</p>
+						</div>
+						<div class="cd-project-info">
+							<p>
+								今年受疫情影响，各地的学校都推迟了开学。然而疫情没有得到控制，学，肯定是开不了的，所以各学校便主张“停课不停学”，纷纷采取了网上授课的方式进行学习，这，便是网上课堂啦!各学校使用的上课工具各不相同，钉钉，课后网，
+								哔哩哔哩，甚至还使用了QQ等聊天软件的直播功能，可谓是层次不穷，五花八门了。而在课程的多样性上，各学校也有不同的安……
+							</p>
+						</div>
+					</li>
+				</ul>
+				<a href="#0" class="cd-close">Close</a>
+				<a href="#0" class="cd-scroll">Scroll</a>
+			</div>
+		</div>
+		<div class="section section5">
+				
+			<canvas id="canvas" style=" position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;"></canvas>
+		
+	<div class="conterbox">
+		<div class="left-box"> &gt&gt</div>
+		<span class="span">全民热搜</span>
+		<div class="right-box"> &lt&lt</div>
+	</div>
+	<div class="news-scroll">
+
+		<div class="scroll-box">
+		
+			<div class="roll">
+				<ul>
+					<li class="roll_1">
+						<a href="#" class="ellipsis">新型肺炎实时动态<span class="time fr">2019年09月21日-24日</span></a>
+					</li>
+					<li class="roll_2">
+						<a href="#" class="ellipsis">北京小汤山医院清零 <span class="time fr">2019年09月21日-24日</span></a>
+					</li>
+					<li class="roll_3">
+						<a href="#" class="ellipsis">中国第四个新冠疫苗获临床批件 <span class="time fr">2019年09月21日-24日</span></a>
+					</li>
+					<li class="roll_4">
+						<a href="#" class="ellipsis">新冠病毒传播能力未出现变化 <span class="time fr">2019年09月21日-24日</span></a>
+					</li>
+					<li class="roll_5">
+						<a href="#" class="ellipsis">特朗普断供世卫组织将被调查 <span class="time fr">2019年09月21日-24日</span></a>
+					</li>
+					<li class="roll_6">
+						<a href="#" class="ellipsis">哈尔滨又现同单元邻居传染 <span class="time fr">2019年09月21日-24日</span></a>
+					</li>
+					<li class="roll_7">
+						<a href="#" class="ellipsis">印度停用中国试剂盒 <span class="time fr">2019年09月21日-24日</span></a>
+					</li>
+					<li class="roll_hide">
+						<a href="#" class="ellipsis">湖北全省六成星级酒店恢复营业 <span class="time fr">2019年09月21日-24日</span></a>
+					</li>
+					<li class="roll_hide">
+						<a href="#" class="ellipsis">纽约州部分地区5月15日后将复工<span class="time fr">2019年09月21日-24日</span></a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<script src="./js/bjtx.js"></script>
+</div> 
+
+	</div>
+	<script language="javascript" src="js/modernizr.js"></script> <!-- Modernizr -->
+
+	<!-- 	<script src="http://libs.baidu.com/jquery/1.11.3/jquery.min.js"></script> -->
+	<script src="./js/jquery-2.1.1.js"></script>
+	<script src="https://cdn.bootcss.com/twitter-bootstrap/4.3.0/js/bootstrap.min.js"></script>
+	<script src="js/jquery.fullPage.min.js"></script>
+	<script src="js/index_slick.js"></script>
+	<script src="js/swiper.min.js"></script>
+	<script src="js/index.js"></script>
+	<script src="js/imagesloaded.pkgd.min.js"></script>
+	<script src="js/TweenMax.min.js"></script>
+	<script src="js/demo.js"></script>
+
+	<script type="text/javascript" src="./js/canvas.js"></script>
+
+	<script src="js/three.js"></script>
+	<script src="./js/monitor.js"></script>
+	<script src="./js/roll.js"></script>
+	<script language="javascript" src="./js/main.js"></script>
+
+	<script>
+		$(function () {
+			$("#the-third-div").hide();
+			$('#testa').click(function () {
+				$("#preview-2").hide("slow");
+				$("#the-third-div").css("display", "block")
+
+				$("#close_a").click(function () {
+						$("#the-third-div").hide();
+						$("#preview-2").show();
+					//$("html,body").animate({ 'scrollTop': $(window).height() }, 1000);
+				})
+
+			});
+			/* 	$('#close_a').click(function(){
+					$("#the-third-div").hide();
+					$("#con").show()
+				}) */
+		})
+	</script>
+
+
+</body>
+
+</html>
