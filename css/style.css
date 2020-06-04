@@ -301,6 +301,7 @@ Main Components
   transform: translateY(-50%);
   width: 100%;
   text-align: center;
+  color: black;
 }
 .is-full-width .cd-title {
   top: 50vh;

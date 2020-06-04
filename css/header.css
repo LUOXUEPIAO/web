@@ -4,6 +4,7 @@ header{
     width: 80%;
     text-align: center;
     position: fixed;
+    margin-left: 7%;
 }
 #nav{
     width: 60%;
@@ -19,6 +20,11 @@ header{
 #nav ul li{
     display: inline-block;
 }
+#nav ul .enter{
+    color: mediumorchid;
+   border-bottom: 2px mediumorchid solid;
+  
+}
 #nav li a {
 color: beige;
 text-decoration: none;
@@ -26,6 +32,7 @@ text-decoration: none;
 
 #nav li a:hover {
 color: white;
+border-bottom: 0px;
 }
 
 #nav li a {

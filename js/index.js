@@ -75,37 +75,58 @@ $('#index_main').fullpage({
 	scrollingSpeed:1000,
 	showActiveTooltip :true, 
   anchors: ['one', 'two', 'three', 'four','five','six'],
-  sectionsColor:['#fff','#b3b4db','	#b3b4db','#b3b4db','#DCDCDC','#778899'],
+  sectionsColor:['#fff','#b3b4db','	#b3b4db','#b3b4db','#b3b4db','#778899'],
 	loopHorizontal: true,
 	afterLoad: function(anchorLink, index){
+    
 		if(index == 1){
-			$('header').removeClass('on');
+      $('#nav>ul>li a').removeClass('enter')
+      $('header').removeClass('on');
+      $('#nav>ul>li:first a').addClass('enter')
+      
 		}
 		if(index == 2){
+      $('#nav>ul>li a').removeClass('enter')
 			$('header').addClass('on');
-			$('.section2 h3').addClass('animated fadeInUp').css('animation-delay', '.1s');
+      $('.section2 h3').addClass('animated fadeInUp').css('animation-delay', '.1s');
+      $('#nav>ul>li:nth-child(2) a').addClass('enter')
 		}
 		if(index == 3){
+      $('#nav>ul>li a').removeClass('enter')
 			$('header').addClass('on');
-			$('.section3 h3').addClass('animated fadeInUp').css('animation-delay', '.1s');
+      $('.section3 h3').addClass('animated fadeInUp').css('animation-delay', '.1s');
+      $('#nav>ul>li:nth-child(3) a').addClass('enter')
 		}
 		if(index == 4){
+      $('#nav>ul>li a').removeClass('enter')
 			$('header').addClass('on');
       $('.section4 h3').addClass('animated fadeInUp').css('animation-delay', '.1s');
+      
+      $('audio').get(0).play()
       $('video').get(0).play();
+      $('#nav>ul>li:nth-child(4) a').addClass('enter')
     }
     if(index == 5){
+      $('#nav>ul>li a').removeClass('enter')
 			$('header').addClass('on');
-			$('.section5 h3').addClass('animated fadeInUp').css('animation-delay', '.1s');
+      $('.section5 h3').addClass('animated fadeInUp').css('animation-delay', '.1s');
+      $('#nav>ul>li:nth-child(5) a').addClass('enter')
     }
     if(index == 6){
-			$('header').addClass('on');
+      $('#nav>ul>li a').removeClass('enter')
+      $('header').addClass('on');
+      $('#nav>ul>li:nth-child(6) a').addClass('enter')
 			$('.section6 h3').addClass('animated fadeInUp').css('animation-delay', '.1s');
     }
     $('.section').removeClass('now')
     setTimeout(function(){
         $('.section').eq(index).addClass('now')
     },200) ;
+    
+      //  setInterval(function(){
+         
+      //     $.fn.fullpage.moveSectionDown()
+      // },7000); 
    
 	},
 	onLeave: function(index, direction){
@@ -114,6 +135,8 @@ $('#index_main').fullpage({
  
     //playing the video
     $('video').get(0).play();
-}
+    $('audio').get(0).play()
+},
+
   
 })
