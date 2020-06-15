@@ -134,8 +134,8 @@ $('#index_main').fullpage({
   afterRender: function () {
  
     //playing the video
-    $('video').get(0).play();
-    $('audio').get(0).play()
+    // $('video').get(0).play();
+    // $('audio').get(0).play()
 },
 
   

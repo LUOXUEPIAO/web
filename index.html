@@ -21,12 +21,8 @@
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="css/header.css">
 	<link rel="stylesheet" href="css/index02.css">
-
 	<script src="https://cdn.bootcss.com/echarts/3.7.0/echarts.min.js"></script>
 	<script src="./incubator-echarts/map/js/china.js"></script>
-<!--	<script src="./incubator-echarts/map/js/world.js"></script>-->
-
-<!-- 	<script src="https://www.jq22.com/jquery/echarts-4.2.1.min.js"></script> -->
 	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
 	<script src="./js/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/84/three.min.js"></script>
@@ -125,16 +121,16 @@
 
 			<div id="app">
 
-				<div class="left">
+				<div class="left left_fix">
 					<ul>
-						<li class="icon"><i><img
-									src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=181950277,2065922876&fm=26&gp=0.jpg"
-									alt="" srcset=""></i></li>
-						<li id="china">中国</li>
-						<li id="usa">美国</li>
-						<li id="cad">加拿大</li>
-						<li id="sin">新加波</li>
-						<li id="rus">俄罗斯</li>
+						<li class="icon">
+							<img src="image/world.png" >
+						</li>
+						<li id="china" class="country_name">中国</li>
+						<li id="usa" class="country_name">美国</li>
+						<li id="cad" class="country_name">加拿大</li>
+						<li id="sin" class="country_name">新加波</li>
+						<li id="rus" class="country_name">俄罗斯</li>
 					</ul>
 				</div>
 				<div class="right">
@@ -148,11 +144,10 @@
 
 <!--					柱形图 -->
 					<div id class="bottom">
-						<p>本月数据</p>
-
+						<p>每月患者人数</p>
 						<ul>
 							<li v-for='item in bottomData' :key='item.id'>
-								<p class="data">{{item.data}}</p>
+								<p class="data">{{item.data}}人</p>
 								<div class="line" :style="item.obj"></div>
 								<p class="month">{{item.id+1}}</p>
 							</li>
@@ -161,7 +156,6 @@
 					</div>
 				</div>
 			</div>
-
 
 			<script type="text/javascript" src="./js/data.js"></script>
 			<script type="text/javascript" src="./js/map.js"></script>

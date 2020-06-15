@@ -132,11 +132,13 @@ $(document).ready(function () {
         },
         geo: { // 这个是重点配置区
             map: 'china', // 表示中国地图
-            roam: true,
+            roam: false,
+			zoom:1.2,
             label: {
                 normal: {
                     show: true, // 是否显示对应地名
                     textStyle: {
+						fontSize:'12px',
                         color: 'rgba(0,0,0,0.4)'
                     }
                 }
@@ -169,83 +171,238 @@ $(document).ready(function () {
 
 
     };
-
-    //定义折线地图配置
-    option2 = {
-        backgroundColor: "#EEEEEE",
-        tooltip: { //设置tip提示
-            trigger: 'axis'
-        },
-
-        legend: { //设置区分（哪条线属于什么）
-            data: ['累计确诊', '累计治愈', '累计死亡']
-        },
-        color: ['#000', 'greed', 'red'], //设置区分（每条线是什么颜色，和 legend 一一对应）
-        xAxis: { //设置x轴
-            type: 'category',
-            boundaryGap: false, //坐标轴两边不留白
-            data: ['2019-12-25', '2020-1-1', '2020-2-1', '2020-3-1', '2020-4-1', '2020-5-1'],
-            name: '日期', //X轴 name
-            nameTextStyle: { //坐标轴名称的文字样式
-                color: '#000',
-                fontSize: 16,
-                padding: [0, 0, 0, 20]
-            },
-            axisLine: { //坐标轴轴线相关设置。
-                lineStyle: {
-                    color: '#000',
-                }
-            }
-        },
-        yAxis: {
-            name: '中国数据累计',
-            nameTextStyle: {
-                color: '#000',
-                fontSize: 16,
-                padding: [0, 0, 2, 50]
-            },
-            axisLine: {
-                lineStyle: {
-                    color: '#000',
-                }
-            },
-            type: 'value'
-        },
-        series: [
-            {
-                name: '累计确诊',
-                data: leijiquezhen,
-                type: 'line', // 类型为折线图
-                lineStyle: { // 线条样式 => 必须使用normal属性
-                    normal: {
-                        color: '#ccc',
-                    }
-                },
-            },
-            {
-                name: '累计治愈',
-                data: leijizhiyu,
-                type: 'line',
-                lineStyle: {
-                    normal: {
-                        color: 'greed',
-                    }
-                },
-            },
-            {
-                name: '累计死亡',
-                data: leijishiwang,
-                type: 'line',
-                lineStyle: {
-                    normal: {
-                        color: 'red',
-                    }
-                },
-            }
-        ]
-    }
-
-
+	
+	
+	
+	// 折线图
+	const colorList = ["#9E87FF", '#73DDFF', '#fe9a8b', '#F56948', '#9E87FF']
+	option4 = {
+	    backgroundColor: '#fff',
+	    legend: {
+	        icon: 'circle',
+			right:'center',
+			top:'5%',
+			show:true,
+	        itemWidth: 6,
+	        itemGap: 20,
+			data:['累计确诊','累计治愈','累计死亡'],
+	        textStyle: {
+	            color: '#556677'
+	        }
+	    },
+	    tooltip: {
+	        trigger: 'axis',
+	        axisPointer: {
+	            label: {
+	                show: true,
+	                backgroundColor: '#fff',
+	                color: '#556677',
+	                borderColor: 'rgba(0,0,0,0)',
+	                shadowColor: 'rgba(0,0,0,0)',
+	                shadowOffsetY: 0
+	            },
+	            lineStyle: {
+	                width: 0
+	            }
+	        },
+	        backgroundColor: '#fff',
+	        textStyle: {
+	            color: '#5c6c7c'
+	        },
+	        padding: [10, 10],
+	        extraCssText: 'box-shadow: 1px 0 2px 0 rgba(163,163,163,0.5)'
+	    },
+	    grid: {
+	        top: '15%'
+	    },
+	    xAxis: [{
+	        type: 'category',
+	        // data: ['北京', '上海', '广州', '深圳', '香港', '澳门', '台湾'],
+			data: ['2019-12-25', '2020-1-1', '2020-2-1', '2020-3-1', '2020-4-1', '2020-5-1'],
+	        axisLine: {
+	            lineStyle: {
+	                color: '#DCE2E8'
+	            }
+	        },
+	        axisTick: {
+	            show: false
+	        },
+	        axisLabel: {
+	            interval: 0,
+	            textStyle: {
+	                color: '#556677'
+	            },
+	            margin: 15
+	        },
+	        axisPointer: {
+	            label: {
+	                padding: [11, 5, 7],
+	                backgroundColor: {
+	                    type: 'linear',
+	                    x: 0,
+	                    y: 0,
+	                    x2: 0,
+	                    y2: 1,
+	                    colorStops: [{
+	                        offset: 0,
+	                        color: '#fff' // 0% 处的颜色
+	                    }, {
+	                        offset: 0.9,
+	                        color: '#fff' // 0% 处的颜色
+	                    }, {
+	                        offset: 0.9,
+	                        color: '#33c0cd' // 0% 处的颜色
+	                    }, {
+	                        offset: 1,
+	                        color: '#33c0cd' // 100% 处的颜色
+	                    }],
+	                    global: false // 缺省为 false
+	                }
+	            }
+	        },
+	        boundaryGap: false
+	    }],
+	    yAxis: [{
+			name: '中国数据累计',
+	        type: 'value',
+			nameTextStyle: {
+			    color: '#333',
+			    fontSize: 12,
+			    padding: [0, 0, 2, 50]
+			},
+	        axisTick: {
+	            show: false
+	        },
+	        axisLine: {
+	            show: true,
+	            lineStyle: {
+	                color: '#DCE2E8'
+	            }
+	        },
+	        axisLabel: {
+	            textStyle: {
+	                color: '#556677'
+	            }
+	        },
+	        splitLine: {
+	            show: false
+	        }
+	    }, {
+	        type: 'value',
+	        position: 'right',
+	        axisTick: {
+	            show: false
+	        },
+	        axisLabel: {
+	            textStyle: {
+	                color: '#556677'
+	            },
+	            formatter: '{value}'
+	        },
+	        axisLine: {
+	            show: true,
+	            lineStyle: {
+	                color: '#DCE2E8'
+	            }
+	        },
+	        splitLine: {
+	            show: false
+	        }
+	    }],
+	    series: [{
+	            name: '累计确诊',
+	            type: 'line',
+	            data: [10, 10, 30, 12, 15, 3, 7],
+	            symbolSize: 1,
+	            symbol: 'circle',
+	            smooth: true,
+	            yAxisIndex: 0,
+	            showSymbol: false,
+	            lineStyle: {
+	                width: 5,
+	                color: new echarts.graphic.LinearGradient(0, 1, 0, 0, [{
+	                        offset: 0,
+	                        color: '#9effff'
+	                    },
+	                    {
+	                        offset: 1,
+	                        color: '#9E87FF'
+	                    }
+	                ]),
+	                shadowColor: 'rgba(158,135,255, 0.3)',
+	                shadowBlur: 10,
+	                shadowOffsetY: 20
+	            },
+	            itemStyle: {
+	                normal: {
+	                    color: colorList[0],
+	                    borderColor: colorList[0]
+	                }
+	            }
+	        }, {
+	            name: '累计治愈',
+	            type: 'line',
+	            data: [5, 12, 11, 14, 25, 16, 10],
+	            symbolSize: 1,
+	            symbol: 'circle',
+	            smooth: true,
+	            yAxisIndex: 0,
+	            showSymbol: false,
+	            lineStyle: {
+	                width: 5,
+	                color: new echarts.graphic.LinearGradient(1, 1, 0, 0, [{
+	                        offset: 0,
+	                        color: '#73DD39'
+	                    },
+	                    {
+	                        offset: 1,
+	                        color: '#73DDFF'
+	                    }
+	                ]),
+	                shadowColor: 'rgba(115,221,255, 0.3)',
+	                shadowBlur: 10,
+	                shadowOffsetY: 20
+	            },
+	            itemStyle: {
+	                normal: {
+	                    color: colorList[1],
+	                    borderColor: colorList[1]
+	                }
+	            }
+	        },
+	        {
+	            name: '累计死亡',
+	            type: 'line',
+	            data: [150, 120, 170, 140, 500, 160, 110],
+	            symbolSize: 1,
+	            yAxisIndex: 1,
+	            symbol: 'circle',
+	            smooth: true,
+	            showSymbol: false,
+	            lineStyle: {
+	                width: 5,
+	                color: new echarts.graphic.LinearGradient(0, 0, 1, 0, [{
+	                        offset: 0,
+	                        color: '#fe9a'
+	                    },
+	                    {
+	                        offset: 1,
+	                        color: '#fe9a8b'
+	                    }
+	                ]),
+	                shadowColor: 'rgba(254,154,139, 0.3)',
+	                shadowBlur: 10,
+	                shadowOffsetY: 20
+	            },
+	            itemStyle: {
+	                normal: {
+	                    color: colorList[2],
+	                    borderColor: colorList[2]
+	                }
+	            }
+	        }
+	    ]
+	};
     //定义事件
 
     map.on('click', function (param) {
@@ -286,7 +443,7 @@ $(document).ready(function () {
         $("#main2").css("display","none");
 
         map.setOption(option1);
-        linechart1.setOption(option2)
+       // linechart1.setOption(option2)
     })
 
     function xmapdata(country){
@@ -351,7 +508,7 @@ $(document).ready(function () {
 
 
     map.setOption(option1);
-    linechart1.setOption(option2)
+    linechart1.setOption(option4)
 
 
 });
